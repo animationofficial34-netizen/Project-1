@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GupShup TV - Free Random Video & Text Chat with Strangers</title>
+    <meta name="description" content="Talk to strangers online on GupShup TV! Free random video call and text chat app. Meet new people instantly.">
+    <meta name="keywords" content="GupShup TV, video chat, random video call, stranger chat, online chat, free video call">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 3 Second Splash Screen / Intro Animation -->
+    <div id="splash-screen">
+        <h1 class="logo-animation">📺 GupShup TV</h1>
+    </div>
+
+    <!-- Main Container -->
+    <div id="app" class="hidden">
+        <header>
+            <div class="logo">📺 GupShup TV</div>
+            <div class="rules-notice">⚠️ 18+ Only | Modded & Safe Environment</div>
+        </header>
+
+        <!-- Top Ad Space -->
+        <div class="ad-banner top-ad">
+            <!-- AdSense Code Here -->
+            <span>Advertisement Space</span>
+        </div>
+
+        <!-- Mode Selection Screen -->
+        <div id="mode-selection" class="card">
+            <h2>स्वागत है गपशप टीवी पर!</h2>
+            <p>कृपया चैट का तरीका चुनें:</p>
+
+            <div class="legal-box">
+                <label>
+                    <input type="checkbox" id="terms-check"> मैं 18 साल से ऊपर हूँ और सभी नियमों व शर्तों से सहमत हूँ।
+                </label>
+            </div>
+
+            <div class="mode-buttons">
+                <button id="btn-text-chat" disabled class="btn primary">💬 Text Chat Only</button>
+                <button id="btn-video-chat" disabled class="btn success">📹 Video & Text Chat</button>
+            </div>
+        </div>
+
+        <!-- Chat Area (Hidden Initially) -->
+        <div id="chat-container" class="hidden">
+            <div class="video-grid" id="video-area">
+                <div class="video-box">
+                    <video id="remote-video" autoplay playsinline></video>
+                    <span class="label">Stranger</span>
+                </div>
+                <div class="video-box self">
+                    <video id="local-video" autoplay playsinline muted></video>
+                    <span class="label">You</span>
+                </div>
+            </div>
+
+            <!-- Side Ad Space (Desktop) -->
+            <div class="ad-sidebar">
+                <span>Ad Space</span>
+            </div>
+
+            <!-- Chat & Controls Box -->
+            <div class="control-panel">
+                <div class="video-controls" id="video-controls">
+                    <button id="btn-toggle-mic" class="ctrl-btn">🎤 Mute</button>
+                    <button id="btn-toggle-cam" class="ctrl-btn">📷 Cam Off</button>
+                    <button id="btn-flip-cam" class="ctrl-btn">🔄 Flip Cam</button>
+                    <button id="btn-next" class="ctrl-btn next-btn">⏭️ Next Stranger</button>
+                </div>
+
+                <!-- Text Messages Box -->
+                <div id="chat-messages" class="chat-messages"></div>
+
+                <div class="chat-input-box">
+                    <input type="text" id="msg-input" placeholder="टाइप करें..." disabled>
+                    <button id="btn-send" disabled>भेजें</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Ad Space -->
+        <div class="ad-banner bottom-ad">
+            <!-- AdSense Code Here -->
+            <span>Advertisement Space</span>
+        </div>
+
+        <!-- Footer / Guidelines -->
+        <footer>
+            <div class="footer-links">
+                <a href="#rules">नियम और शर्तें (18+)</a> | 
+                <a href="#privacy">गोपनीयता नीति</a> | 
+                <a href="#contact">संपर्क करें</a>
+            </div>
+            <p>&copy; 2026 GupShup TV. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Socket.io library -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
