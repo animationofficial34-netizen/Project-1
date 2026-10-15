@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Splash Screen Animation */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 0.5s ease 3s forwards;
+}
+
+.logo-animation {
+    font-size: 3rem;
+    color: #ff3e3e;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+.hidden { display: none !important; }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #1e1e1e;
+    border-bottom: 2px solid #ff3e3e;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; color: #ff3e3e; }
+.rules-notice { font-size: 0.8rem; color: #ffcc00; }
+
+/* Ads Placeholders */
+.ad-banner {
+    background: #2a2a2a;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px dashed #555;
+    color: #888;
+}
+
+/* Card Selection */
+.card {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.mode-buttons { display: flex; gap: 15px; margin-top: 20px; }
+.btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn.primary { background: #007bff; color: white; }
+.btn.success { background: #28a745; color: white; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Video Grid layout */
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.video-box {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+video { width: 100%; height: 100%; object-fit: cover; }
+.label {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0,0,0,0.6);
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+/* Controls & Chat */
+.control-panel { max-width: 900px; margin: 0 auto; padding: 10px; }
+.video-controls { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 10px; }
+.ctrl-btn { padding: 10px 15px; background: #333; color: white; border: none; border-radius: 6px; cursor: pointer; }
+.next-btn { background: #ff3e3e; font-weight: bold; }
+
+.chat-messages {
+    height: 150px;
+    background: #181818;
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.chat-input-box { display: flex; gap: 10px; }
+.chat-input-box input { flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #444; background: #222; color: #fff; }
+.chat-input-box button { padding: 10px 20px; background: #ff3e3e; border: none; color: #fff; border-radius: 6px; cursor: pointer; }
+
+footer {
+    margin-top: auto;
+    background: #181818;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: #888;
+}
+footer a { color: #aaa; text-decoration: none; }
